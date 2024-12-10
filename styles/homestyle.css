@@ -1,0 +1,174 @@
+@import url(background.css);
+:root{
+  --primary-color: #15262d;
+  --secondary-color: #006989;
+  --primary-accent1-inter: #0d191f;
+  --accent-color-1: #050517;
+  --accent-color-2: rgb(247, 254, 255);
+  --background: linear-gradient(140deg, var(--accent-color-1) 0%, var(--primary-accent1-inter) 80%, var(--primary-color) 100%);
+  --resume-link-color: var(--background)
+}
+
+.left, .right{
+  flex: 1;
+  height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  padding-left: 100px;
+}
+
+.right{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header{
+  width: 100%;
+  height: 40px;
+  border-radius: 30px;
+  display: flex;
+  background-color: var(--accent-color-2);
+  color: black;
+  margin: 2%;
+  box-shadow: 0px 0px 25px 1px black;
+  transition: box-shadow 0.25s ease;
+  margin-top: 3%;
+  opacity: 50%;
+  transition: opacity .25s ease;
+}
+
+header:hover{
+  opacity: 100%;
+}
+
+header a{
+  color: black;
+  text-decoration: none;
+}
+
+header a:hover, text{
+  color: var(--secondary-color);
+  transition: box-shadow 0.5s ease;
+}
+
+.contact-info{
+  flex-grow: 1;
+  font-size: 14px;
+  margin: 0 2%;
+  display: flex;
+  align-items: center;
+  gap: 5%;
+}
+
+.profile-card{
+  width: 300px;
+  height: 500px;
+  border-radius: 75px;
+  box-shadow: 0 0 50px 3px black;
+  transition: box-shadow 0.25s ease;
+  overflow: hidden;
+}
+
+.profile-card > div{
+  height: 50%;
+  width: 100%;
+  opacity: 50%;
+}
+
+.profile-bottom{
+  /*background-color: var(--accent-color-2); */
+  transition: opacity 0.25s ease;
+  background-color: var(--accent-color-2);
+  color: black
+}
+
+.profile-bottom > h2{
+  text-align: center;
+
+}
+
+.profile-top{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-card:hover .profile-bottom, .profile-card:hover .profile-top{
+  opacity: 100%;
+  transition: opacity 0.5s ease;
+}
+
+.profile-img{
+  width: 200px;
+  height: 200px;
+  border-radius: 100px;
+  padding: 15px;
+  background-color: var(--accent-color-2);
+}
+
+.resume-button{
+  background: var(--resume-link-color);
+  border-style: solid;
+  height: 50px;
+  border-radius: 25px;
+  text-decoration: none;
+  color: var(--accent-color-2);
+  opacity: 100%;
+  width: 60%;
+  transition: width 0.5s ease;
+}
+
+.resume-button:hover{
+  width: 70%;
+}
+
+.left{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 75px;
+}
+
+.demo-card{
+  width: 500px;
+  height: 350px;
+  border-radius: 10%;
+  box-shadow: 0 0 40px 1px black ;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+
+.demo-card-item:hover{
+  opacity: 100%;
+  flex-grow: 5;
+  flex-shrink: 0;
+}
+
+.demo-card-item{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5%;
+  border: 2px solid transparent;
+  outline: 1px solid var(--accent-color-1);
+  opacity: 50%;
+  transition: opacity 0.25s ease, flex-grow 0.75s ease, flex-shrink 0.25s ease;
+  box-sizing: border-box;
+  flex-grow: 1;
+  flex-shrink: 1;
+}
+
+.demo-card > a{
+  color: var(--accent-color-2);
+  text-decoration: none;
+}
+
+.demo-card-item img{
+  max-height: 100px;
+  height: auto;
+  width: 20%;
+}
