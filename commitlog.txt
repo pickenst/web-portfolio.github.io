@@ -1,1 +1,5 @@
-Version 0: Initial website created.
+Version 0: 
+  -Initial website created.
+Version 1.0: 
+  -MS-AID and initial functionality of PolyWordle mini-game minus API
+  word grabbing

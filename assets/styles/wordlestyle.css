@@ -1,0 +1,55 @@
+@import url(background.css);
+:root{
+  --wordleboxchild: background-color: #15262d;
+  --wordlewrong:var(--wordleboxchild);
+  --wordleright:var(--wordleboxchild);
+}
+
+body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.wordle-box{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width:fit-content;
+  height: 150px;
+  gap: 15px;
+  margin-bottom: 75px;
+}
+.wordle-box-child{
+  width: 128px;
+  height: 150px;
+  border-radius: 20%;
+  background-color: #15262d;
+  font-size: 130px;
+  color:white;
+  text-align: center;
+  opacity: 50%;
+  box-shadow: 0 0 25px 3px black;
+  transition: opacity .25s ease, box-shadow .35s ease;
+}
+
+.start-button{
+  background-color: #15262d;
+  width: 300px;
+  height: 75px;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 0 25px 3px black;
+  font-size: 40px;
+  color:white;
+  opacity: 50%;
+  transition: opacity .25s ease;
+}
+
+.start-button:hover{
+  opacity: 100%;
+  cursor: pointer;
+}
+
