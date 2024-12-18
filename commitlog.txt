@@ -5,3 +5,5 @@ Version 1.0:
   word grabbing
 Version 1.0.1:
   - Bug Fixes
+Version 1.0.2:
+  - Bug Fixes
