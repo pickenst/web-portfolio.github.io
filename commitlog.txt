@@ -1,5 +1,7 @@
 Version 0: 
-  -Initial website created.
+  - Initial website created.
 Version 1.0: 
-  -MS-AID and initial functionality of PolyWordle mini-game minus API
+  - MS-AID and initial functionality of PolyWordle mini-game minus API
   word grabbing
+Version 1.0.1:
+  - Bug Fixes
