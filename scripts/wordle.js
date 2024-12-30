@@ -180,5 +180,7 @@ function generateWord(){
       console.log(data[key][randomIndex]);
       return data[key][randomIndex];
     })
-    .catch(error => {});
+    .catch(error => {
+      console.error("ERROR CATCHING WORDBANK JSON")
+    });
 }
