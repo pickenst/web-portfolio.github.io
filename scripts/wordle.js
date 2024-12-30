@@ -1,5 +1,5 @@
 var letterCount = 0;
-const wordSrc = "../assets/wordbank.json";
+const wordSrc = "./wordbank.json";
 const correctColor = "rgb(0, 80, 92)"
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -182,4 +182,3 @@ function generateWord(){
     })
     .catch(error => {});
 }
-
