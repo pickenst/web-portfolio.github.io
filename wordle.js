@@ -171,7 +171,7 @@ async function play(){
 }
 
 function generateWord(){
-  return fetch('../wordbank.json')
+  return fetch('./wordbank.json')
     .then(response => response.json())
     .then(data => {
       let key = letterCount.toString();
