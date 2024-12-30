@@ -1,30 +1,48 @@
-const testWord = "Humming"
-const letterCount = testWord.length;
+var letterCount = 0;
+const wordSrc = "../assets/wordbank.json";
+const correctColor = "rgb(0, 80, 92)"
 
 document.addEventListener("DOMContentLoaded", () => {
   const startButton = document.getElementById("start-button");
+  const footer = document.getElementById("wordle-box-footer");
   const wordleBox = document.getElementById("wordle-box");
-  for(let i = 0; i < letterCount; i++){
-    const wordleLetter = document.createElement("div");
-    wordleLetter.classList.add("wordle-box-child");
-    wordleLetter.textContent = "";
-    wordleBox.appendChild(wordleLetter);
-  }
+  const lengthSelector = document.getElementById("length-selector");
+  updateLetters();
+  
+  lengthSelector.addEventListener("input", () =>{
+    updateLetters();
+  })
 
   startButton.addEventListener("click", () =>{
-    startButton.remove();
+    footer.remove();
     play();
   })
 
+  function updateLetters(){
+    letterCount = lengthSelector.value;
+    wordleBox.innerHTML = "";
+    for(let i = 0; i < letterCount; i++){
+      const wordleLetter = document.createElement("div");
+      wordleLetter.classList.add("wordle-box-child");
+      wordleLetter.textContent = "";
+      wordleBox.appendChild(wordleLetter);
+    }
+  }
 })
 
-function play(){
+async function play(){
+  const word = await generateWord();
   const letters = document.querySelectorAll(".wordle-box-child");
   var letterIdx = 0;
   letters[0].style.opacity = "1";
   const body = document.body;
 
-  body.addEventListener("keypress", (event) => {
+  body.addEventListener("keypress", inputEvent);
+  body.addEventListener("keydown", backEvent);
+  body.addEventListener("keydown", spaceEvent);
+  body.addEventListener("keydown", moveEvent);
+
+  function inputEvent(event){
     if(!((event.keyCode >= 65 && event.keyCode <= 90) || (event.keyCode >= 97 && event.keyCode <= 122))){
       return;
     }
@@ -34,26 +52,9 @@ function play(){
       letterIdx++;
     }
     letters[letterIdx].style.opacity = "1";
-  })
-
-  body.addEventListener("keydown", (event) => {
-    if(!(event.key == "Backspace")){
-      return;
-    }
-    letters[letterIdx].style.opacity = ".5";
-    if(letterIdx == 0 || !(letters[letterIdx].textContent == "")){
-      letters[letterIdx].textContent = ""
-    }
-    else{
-      letters[letterIdx - 1].textContent = "";
-    }
-    if(letterIdx > 0){
-      letterIdx--;
-    }
-    letters[letterIdx].style.opacity = "1";
-  })
-
-  body.addEventListener("keydown", (event) => {
+  }
+  
+  function spaceEvent(event){
     if(!(event.key == "Enter")){
       return;
     }
@@ -63,9 +64,9 @@ function play(){
       }
     }
     submit();
-  })
+  }
 
-  body.addEventListener("keydown", (event) => {
+  function moveEvent(event){
     const key = event.key;
     var incr = 0;
     if(!(key == "ArrowLeft" || key == "ArrowRight")){
@@ -81,11 +82,27 @@ function play(){
     letters[letterIdx].style.opacity = ".5";
     letterIdx += incr;
     letters[letterIdx].style.opacity = "1";
-  })
+  }
+
+  function backEvent(){
+    if(!(event.key == "Backspace")){
+      return;
+    }
+    letters[letterIdx].style.opacity = ".5";
+    if(letterIdx == 0 || !(letters[letterIdx].textContent == "")){
+      letters[letterIdx].textContent = ""
+    }
+    else{
+      letters[letterIdx - 1].textContent = "";
+    }
+    if(letterIdx > 0){
+      letterIdx--;
+    }
+    letters[letterIdx].style.opacity = "1";
+  }
 
   function submit(){
-    
-    var capWord = testWord.toUpperCase().toString();
+    var capWord = word.toUpperCase().toString();
     var indexMatches = [];
     var letterCount = {};
 
@@ -96,13 +113,18 @@ function play(){
       }
       letterCount[letter]++
     }
+
+    let win = true;
     
     letters.forEach((element, index) => {
       const letter = element.textContent.charAt(0).toUpperCase();
       if(letter == capWord.charAt(index)){
-        element.style.boxShadow = "0 0 25px 3px green";
+        element.style.boxShadow = "0 0 25px 3px " + correctColor;
         indexMatches.push(index);
         letterCount[letter]--;
+      }
+      else{
+        win = false;
       }
     });
 
@@ -110,14 +132,54 @@ function play(){
       const letter = element.textContent.charAt(0).toUpperCase();
       if(!indexMatches.includes(index)){
         if(letterCount[letter] > 0){
-          element.style.boxShadow = "0 0 25px 3px yellow";
+          element.style.boxShadow = "0 0 25px 3px gray";
         }
         else{
-          element.style.boxShadow = "0 0 25px 3px red";
+          element.style.boxShadow = "0 0 25px 3px black"
         }
       }
+    });
+
+    const answerBox = document.getElementById("answer-box");
+    var userAnswer = document.createElement("div");
+    userAnswer.classList.add("answer-box-word");
+    letters.forEach(element => {
+      var letter = element.textContent.charAt(0);
+      var shadow = (element.style.boxShadow).split(' ').reverse().slice(4).reverse().join(' ');
+      var answerLetter = document.createElement("div");
+      answerLetter.classList.add("answer-box-letter");
+      answerLetter.textContent = letter;
+      answerLetter.style.boxShadow = "0 0 3px 1px " + shadow;
+      userAnswer.appendChild(answerLetter);
     })
+    answerBox.appendChild(userAnswer);
+
+    if(win){
+      winSequence();
+      return;
+    }
   }
 
-  
+  function winSequence(){
+    body.removeEventListener("keypress", inputEvent);
+    body.removeEventListener("keydown", backEvent);
+    body.removeEventListener("keydown", spaceEvent);
+    body.removeEventListener("keydown", moveEvent);
+    letters.forEach(element => {
+      element.style.opacity = 1;
+    })
+  }
 }
+
+function generateWord(){
+  return fetch(wordSrc)
+    .then(response => response.json())
+    .then(data => {
+      let key = letterCount.toString();
+      var randomIndex = Math.floor(Math.random() * data[key].length);
+      console.log(data[key][randomIndex]);
+      return data[key][randomIndex];
+    })
+    .catch(error => {});
+}
+

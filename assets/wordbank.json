@@ -1,0 +1,68 @@
+{
+  "3": 
+      [
+        "the", "and", "for", "are", "but", "not", "you", "all", "any", "can",
+        "had", "her", "was", "one", "our", "out", "day", "get", "has", "him", 
+        "his", "how", "man", "new", "now", "old", "see", "two", "way", "who", 
+        "boy", "did", "its", "let", "put", "say", "she", "too", "use", "end", 
+        "far", "fun", "own", "red", "top", "add", "bad", "big", "cat", "dog", 
+        "egg", "fan", "fix", "fox", "gun", "hat", "hit", "ice", "jam", "jar", 
+        "key", "log", "map", "nap", "net", "owl", "pan", "pen", "pin", "rat", 
+        "row", "run", "set", "sit", "sun", "tap", "ten", "tip", "toy", "van", 
+        "war", "wet", "win", "yes", "zip", "box", "bat", "cow", "pig", "fox"
+      ],
+  "4": 
+      [
+        "love", "life", "time", "good", "work", "make", "give", "help", "need", "take",
+        "look", "find", "keep", "call", "feel", "know", "show", "tell", "want", "live",
+        "come", "have", "hold", "move", "open", "play", "read", "send", "stay", "turn", 
+        "wait", "walk", "jump", "cook", "grow", "hear", "join", "kiss", "lend", "plan",
+        "save", "sell", "seem", "talk", "test", "wash", "wish", "work", "bind", "blow", 
+        "care", "cast", "dare", "draw", "drop", "ease", "face", "fail", "fear", "gain", 
+        "hate", "hide", "hunt", "kill", "last", "lead", "lend", "lift", "link", "list", 
+        "meet", "miss", "note", "pack", "pick", "pull", "push", "rest", "ride", "ring", 
+        "rise", "rule", "rush", "safe", "seek", "send", "hero", "sing", "skip", "slow", 
+        "sort", "spin", "star", "stay", "stop", "suit", "test", "view", "wait", "wear"
+      ],
+  "5": 
+      [
+        "about", "after", "again", "below", "black", "could", "every", "first", "found", "great", 
+        "heart", "house", "knows", "light", "money", "never", "night", "place", "point", "right", 
+        "small", "sound", "state", "still", "study", "thing", "those", "three", "water", "where", 
+        "world", "young", "agree", "beach", "being", "block", "bring", "catch", "cause", "check", 
+        "clash", "clear", "close", "count", "dance", "devil", "drink", "dream", "smile", "stone",
+        "drive", "early", "enter", "final", "focus", "force", "found", "friend", "give", "group", 
+        "happy", "heart", "haste", "image", "issue", "judge", "leave", "lemon", "light", "march", 
+        "night", "order", "party", "piano", "power", "press", "quick", "ready", "round", "sense", 
+        "share", "shoot", "sleep", "small", "smart", "sound", "speak", "start", "stick", "stone", 
+        "style", "thing", "those", "track", "voice", "watch", "wheel", "youth", "zones", "alone", 
+        "space", "sword"
+      ],
+  "6": 
+      [
+        "abacus", "absent", "accept", "advice", "agenda", "arrive", "baking", "beauty", "bricks", "breeze", 
+        "broker", "buffer", "butter", "caring", "chance", "choose", "circle", "clause", "clumsy", "crisis", 
+        "custom", "decide", "dinner", "doctor", "double", "engine", "effect", "escape", "family", "famous", 
+        "father", "fights", "finish", "forest", "friend", "gadget", "gently", "guitar", "gloomy", "gossip", 
+        "grapes", "happen", "hatred", "heaven", "honest", "hunger", "impact", "income", "injury", "jacket", 
+        "lately", "lender", "lively", "lovers", "magnet", "manual", "master", "middle", "monkey", "murder", 
+        "mother", "nature", "narrow", "needle", "office", "orange", "output", "parade", "planet", "player", 
+        "proven", "puzzle", "radial", "rescue", "rookie", "safety", "simple", "sister", "signal", "silent", 
+        "stable", "street", "stormy", "strong", "travel", "tunnel", "threat", "vision", "wonder", "yellow"
+      ],
+  "7": 
+      [
+        "ability", "advance", "against", "already", "beating", "believe", "benefit", "besides",
+        "capable", "capture", "careful", "certain", "dealing", "decline", "density", "destroy",
+        "evident", "examine", "exclude", "explore", "faculty", "failure", "feeling", "finance",
+        "gateway", "genuine", "general", "greater", "heavily", "helping", "himself", "holding",
+        "illness", "imaging", "include", "insight", "jointly", "journey", "justify", "justice",
+        "keeping", "killing", "kingdom", "knowing", "leading", "leisure", "liberty", "license",
+        "massive", "measure", "mention", "mission", "neither", "nervous", "neutral", "nothing",
+        "offense", "opening", "opinion", "outlook", "package", "parking", "partner", "passion",
+        "qualify", "quality", "quarter", "quickly", "radical", "reading", "recover", "regular",
+        "regular", "restore", "reverse", "routine", "session", "several", "shortly", "silence",
+        "telecom", "tension", "therapy", "through", "uniform", "unknown", "unusual", "upscale",
+        "various", "venture", "version", "victory", "waiting", "wanting", "warrant", "weekend"
+      ]
+}

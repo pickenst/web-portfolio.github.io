@@ -1,16 +1,76 @@
 @import url(background.css);
 :root{
   --wordleboxchild: background-color: #15262d;
-  --wordlewrong:var(--wordleboxchild);
-  --wordleright:var(--wordleboxchild);
 }
 
 body{
   display: flex;
   align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.left{
+  display: flex;
+  align-items: center;
   justify-content: center;
   flex-direction: column;
+  position: fixed;
+  cursor: default;
+  margin-right: 230px;
+}
+
+.answer-box{
+  position: relative;
+  margin-left: 1000px;
+  width: 200px;
+  height: 500px;
+  border-radius: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   overflow: hidden;
+  box-shadow: 0 0 25px 3px rgba(0, 0, 0, 0.75);
+  padding-top: 30px;
+  gap: 20px;
+}
+
+.answer-background{
+  position: absolute;
+  margin-top: -30px;
+  height: 100%;
+  width: 100%;
+  background-color: #15262d;
+  overflow: hidden;
+  opacity: 50%;
+  z-index: -1;
+}
+
+.answer-box-word{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: fit-content;
+  gap: 7px;
+  background-color: none;
+}
+
+.answer-box-letter{
+  border-radius: 20%;
+  background-color: #15262d;
+  width: auto;
+  font-size: 20px;
+  color: white;
+  text-align: center;
+  opacity: 100%;
+  box-shadow: 0 0 3px 1px black;
+  overflow: hidden;
+  width: 20px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .wordle-box{
@@ -18,7 +78,8 @@ body{
   align-items: center;
   justify-content: center;
   width:fit-content;
-  height: 150px;
+  height: fit-content;
+  border-radius: 20%;
   gap: 15px;
   margin-bottom: 75px;
 }
@@ -26,8 +87,9 @@ body{
   width: 128px;
   height: 150px;
   border-radius: 20%;
+  padding-top: 25px;
   background-color: #15262d;
-  font-size: 130px;
+  font-size: 115px;
   color:white;
   text-align: center;
   opacity: 50%;
@@ -51,5 +113,39 @@ body{
 .start-button:hover{
   opacity: 100%;
   cursor: pointer;
+}
+
+.wordle-box-footer{
+  display: flex;
+  flex-direction: column;
+  color: #15262d;
+  gap: 50px;
+}
+
+.length-selector{
+  -webkit-appearance: none;
+  appearance: none;
+  background: #15262d;
+  height: 5px;
+  border-radius: 10px;
+  box-shadow: 0 0 25px 3px black;
+}
+
+.length-selector::-webkit-slider-thumb{
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 100%;
+  background: var(--secondary-color);
+  cursor: pointer;
+  box-shadow: 0 0 25px 3px black;
+  opacity: 50%;
+}
+
+.length-selector::-webkit-slider-thumb:hover{
+  opacity: 100%;
+  transition: opacity .25s ease;
+  box-shadow: 0 0 25px 3px black;
 }
 
