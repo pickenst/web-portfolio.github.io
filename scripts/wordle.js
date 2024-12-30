@@ -1,5 +1,4 @@
 var letterCount = 0;
-const wordSrc = "./wordbank.json";
 const correctColor = "rgb(0, 80, 92)"
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -172,7 +171,7 @@ async function play(){
 }
 
 function generateWord(){
-  return fetch(wordSrc)
+  return fetch('../wordbank.json')
     .then(response => response.json())
     .then(data => {
       let key = letterCount.toString();

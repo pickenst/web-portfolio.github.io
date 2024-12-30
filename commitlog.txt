@@ -11,5 +11,5 @@ Version 1.1:
   - Added functionality for wordle.
   - Ditched API for set JSON wordbank to ensure common words.
   - TODO: Add Dictionary or similar API to allow spellchecking.
-Version 1.1.1, 1.1.2:
+Version 1.1.1, 1.1.2, 1.1.3:
   - Bug Fixes
