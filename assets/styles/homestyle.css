@@ -1,13 +1,4 @@
 @import url(background.css);
-:root{
-  --primary-color: #15262d;
-  --secondary-color: #006989;
-  --primary-accent1-inter: #0d191f;
-  --accent-color-1: #050517;
-  --accent-color-2: rgb(247, 254, 255);
-  --background: linear-gradient(140deg, var(--accent-color-1) 0%, var(--primary-accent1-inter) 80%, var(--primary-color) 100%);
-  --resume-link-color: var(--background)
-}
 
 .left, .right{
   flex: 1;
@@ -108,7 +99,7 @@ header a:hover, text{
 }
 
 .resume-button{
-  background: var(--resume-link-color);
+  background: var(--link-color);
   border-style: solid;
   height: 50px;
   border-radius: 25px;

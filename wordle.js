@@ -1,5 +1,6 @@
 var letterCount = 0;
 const correctColor = "rgb(0, 80, 92)"
+const dictionarySrc = "https://api.dictionaryapi.dev/api/v2/entries/en/";
 
 document.addEventListener("DOMContentLoaded", () => {
   const startButton = document.getElementById("start-button");
@@ -38,7 +39,7 @@ async function play(){
 
   body.addEventListener("keypress", inputEvent);
   body.addEventListener("keydown", backEvent);
-  body.addEventListener("keydown", spaceEvent);
+  body.addEventListener("keydown", EnterEvent);
   body.addEventListener("keydown", moveEvent);
 
   function inputEvent(event){
@@ -53,7 +54,7 @@ async function play(){
     letters[letterIdx].style.opacity = "1";
   }
   
-  function spaceEvent(event){
+  function EnterEvent(event){
     if(!(event.key == "Enter")){
       return;
     }
@@ -100,10 +101,21 @@ async function play(){
     letters[letterIdx].style.opacity = "1";
   }
 
-  function submit(){
+  async function submit(){
     var capWord = word.toUpperCase().toString();
     var indexMatches = [];
     var letterCount = {};
+    var userWord = "";
+    letters.forEach(element => {
+      userWord += element.textContent;
+    });
+
+    const isValid = await spellCheck(userWord);
+
+    if(!isValid){
+      return;
+    }
+    
 
     for(let i = 0; i < capWord.length; i++){
       const letter = capWord.charAt(i);
@@ -162,7 +174,7 @@ async function play(){
   function winSequence(){
     body.removeEventListener("keypress", inputEvent);
     body.removeEventListener("keydown", backEvent);
-    body.removeEventListener("keydown", spaceEvent);
+    body.removeEventListener("keydown", EnterEvent);
     body.removeEventListener("keydown", moveEvent);
     letters.forEach(element => {
       element.style.opacity = 1;
@@ -183,3 +195,18 @@ function generateWord(){
       console.error("ERROR CATCHING WORDBANK JSON")
     });
 }
+
+function spellCheck(word){
+  return fetch(dictionarySrc + word)
+  .then(response => {
+    if(response.status === 404){
+      return false;
+    }
+    return response.json();
+  })
+  .catch(error => {
+    return false;
+  });
+}
+
+//TODO: Add definition puller

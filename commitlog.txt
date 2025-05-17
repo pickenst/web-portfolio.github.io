@@ -13,3 +13,5 @@ Version 1.1:
   - TODO: Add Dictionary or similar API to allow spellchecking.
 Version 1.1.1 -> 1.1.5:
   - Bug Fixes
+Version 1.2:
+  -Updated MS-Aid Page

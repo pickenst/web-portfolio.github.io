@@ -6,7 +6,7 @@
   --accent-color-1: #050517;
   --accent-color-2: rgb(247, 254, 255);
   --background: linear-gradient(140deg, var(--accent-color-1) 0%, var(--primary-accent1-inter) 80%, var(--primary-color) 100%);
-  --resume-link-color: var(--background)
+  --link-color: var(--background)
 }
 body{
   background: var(--background);

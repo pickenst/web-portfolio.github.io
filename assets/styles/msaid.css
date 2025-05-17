@@ -1,0 +1,54 @@
+@import url(background.css);
+body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.description{
+  border-radius: 50px;
+  box-shadow: 0 0 50px 3px black;
+  transition: box-shadow 0.25s ease;
+  overflow: hidden;
+  color: var(--accent-color-2);
+  opacity: .9;
+  width: 65%;
+  height: 65%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 5%;
+  padding: 5%;
+}
+
+.description > h1{
+  text-align: center;
+}
+
+.buttons{
+  display: flex;
+  gap: 10%;
+  width: 100%;
+  justify-content: center;
+}
+
+.buttons button{
+  background: var(--resume-link-color);
+  border-style: solid;
+  height: 50px;
+  border-radius: 25px;
+  border: none;
+  color: var(--accent-color-2);
+  background-color: var(--primary-accent1-inter);
+  box-shadow: 0 0 50px 3px black;
+  text-decoration: none;
+  opacity: 80%;
+  width: 150px;
+  transition: width 0.5s ease, opacity 0.5s ease;
+}
+
+.buttons button:hover{
+  width: 200px;
+  opacity: 100%;
+  transition: width 0.5s ease, opacity 0.5s ease;
+}
